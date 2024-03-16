@@ -29,10 +29,10 @@ SECRET_KEY =\
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost','https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
+    'localhost','https://127.0.0.1','https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
+    'https://127.0.0.1','https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
 ]
 
 REST_FRAMEWORK = {
