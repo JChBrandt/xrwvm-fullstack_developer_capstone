@@ -12,6 +12,14 @@
 # - Description
 # - Any other fields you would like to include in car make model
 # - __str__ method to print a car make object
+class CarMake(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(null=False, max_length=30)
+    description = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return "Name: " + self.name + ", " + \
+            "Description: " + self.description
 
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
@@ -23,3 +31,53 @@
 # - Year (IntegerField) with min value 2015 and max value 2023
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
+class CarModel(models.Model):
+    id = models.AutoField(primary_key=True)
+    MICRO = 'Micro'
+    SEDAN = 'Sedan'
+    CUV ='CUV'
+    SUV = 'SUV'
+    HATCHBACK = 'Hatchback'
+    ROADSTER = 'Roadster'
+    PICKUP = 'Pickup'
+    VAN = 'Van'
+    COUPE = 'Coupe'
+    SUPERCAR = 'Supercar'
+    CAMPERVAN = 'Campervan'
+    MINITRUCK = 'Mini Truck'
+    CABRIOLET = 'Cabriolet'
+    MINIVAN = 'Minivan'
+    TRUCK = 'Truck'
+    BIGTRUCK = 'Big Truck'
+    WAGON = 'Wagon'
+    CAR_TYPE = [
+        (MICRO, 'Micro'),
+        (SEDAN, 'Sedan'),
+        (CUV,'CUV'),
+        (SUV, 'SUV'),
+        (HATCHBACK,'Hatchback'),
+        (ROADSTER,'Roadster'),
+        (PICKUP,'Pickup'),
+        (VAN,'Van'),
+        (COUPE,'Coupe'),
+        (SUPERCAR,'Supercar'),
+        (CAMPERVAN,'Campervan'),
+        (MINITRUCK,'Mini Truck'),
+        (CABRIOLET,'Cabriolet'),
+        (MINIVAN,'Minivan'),
+        (TRUCK,'Truck'),
+        (BIGTRUCK,'Big Truck'),
+        (WAGON, 'Wagon')
+    ]
+    maker = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    dealerid = models.IntegerField(default=0)
+    name = models.CharField(null=False, max_length=30)
+    modeltype = models.CharField(max_length=10, choices=CAR_TYPE, default=SEDAN)
+    engine = models.CharField(max_length=30)
+    year = models.DateField(null=True)
+
+    def __str__(self):
+        return "Name: " + self.name + ", " + \
+            "Type: " + self.modeltype + ", " + \
+            "Engine: " + self.engine + ", " + \
+            "Year: " + self.year.strftime('%Y-%m-%d')
