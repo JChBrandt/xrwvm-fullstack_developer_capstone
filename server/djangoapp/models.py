@@ -74,10 +74,10 @@ class CarModel(models.Model):
     name = models.CharField(null=False, max_length=30)
     modeltype = models.CharField(max_length=10, choices=CAR_TYPE, default=SEDAN)
     engine = models.CharField(max_length=30)
-    year = models.DateField(null=True)
+    year = models.IntegerField(default=0)
 
     def __str__(self):
         return "Name: " + self.name + ", " + \
             "Type: " + self.modeltype + ", " + \
             "Engine: " + self.engine + ", " + \
-            "Year: " + self.year.strftime('%Y-%m-%d')
+            "Year: " + self.year
