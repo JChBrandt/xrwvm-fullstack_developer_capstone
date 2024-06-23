@@ -113,5 +113,4 @@ def get_cars(request):
     cars = []
     for car_model in car_models:
         cars.append({"CarModel": car_model.name, "CarMake": car_model.maker.name})
-        print(car_model)
     return JsonResponse({"CarModels":cars})
