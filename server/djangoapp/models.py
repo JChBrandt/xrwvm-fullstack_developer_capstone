@@ -1,8 +1,8 @@
 # Uncomment the following imports before adding the Model code
 
 from django.db import models
-from django.utils.timezone import now
-from django.core.validators import MaxValueValidator, MinValueValidator
+# from django.utils.timezone import now
+# from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -34,7 +34,7 @@ class CarModel(models.Model):
     id = models.AutoField(primary_key=True)
     MICRO = 'Micro'
     SEDAN = 'Sedan'
-    CUV ='CUV'
+    CUV = 'CUV'
     SUV = 'SUV'
     HATCHBACK = 'Hatchback'
     ROADSTER = 'Roadster'
@@ -52,7 +52,7 @@ class CarModel(models.Model):
     CAR_TYPE = [
         (MICRO, 'Micro'),
         (SEDAN, 'Sedan'),
-        (CUV,'CUV'),
+        (CUV, 'CUV'),
         (SUV, 'SUV'),
         (HATCHBACK, 'Hatchback'),
         (ROADSTER, 'Roadster'),
@@ -72,8 +72,8 @@ class CarModel(models.Model):
     dealerid = models.IntegerField(default=0)
     name = models.CharField(null=False, max_length=30)
     modeltype = models.CharField(
-        max_length=10, 
-        choices=CAR_TYPE, 
+        max_length=10,
+        choices=CAR_TYPE,
         default=SEDAN
     )
     engine = models.CharField(max_length=30)
