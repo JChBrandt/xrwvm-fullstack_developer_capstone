@@ -31,12 +31,13 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     'https://127.0.0.1',
-    'https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
-    'https://jcbrandt-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    'https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai', # noqa: E501
+    'https://jcbrandt-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai' # noqa: E501
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://127.0.0.1','https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
-    'https://jcbrandt-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    'https://127.0.0.1',
+    'https://jcbrandt-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai', # noqa: E501
+    'https://jcbrandt-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai' # noqa: E501
 ]
 
 REST_FRAMEWORK = {
@@ -151,4 +152,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build'),
     os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
-
