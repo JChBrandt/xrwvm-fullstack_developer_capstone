@@ -12,7 +12,7 @@ def initiate():
     car_make_instances = []
     for data in car_make_data:
         car_make_instances.append(
-            CarMake.objects.create(name=data['name'], 
+            CarMake.objects.create(name=data['name'],
                                    description=data['description']
             )
         )
@@ -20,21 +20,21 @@ def initiate():
     # Create CarModel instances with the corresponding CarMake instances
     car_model_data = [
       {
-          "name": "Pathfinder", 
-          "modeltype": "SUV", 
-          "year": 2023, 
+          "name": "Pathfinder",
+          "modeltype": "SUV",
+          "year": 2023,
           "maker": car_make_instances[0]
       },
       {
-          "name": "Qashqai", 
-          "modeltype": "SUV", 
-          "year": 2023, 
+          "name": "Qashqai",
+          "modeltype": "SUV",
+          "year": 2023,
           "maker": car_make_instances[0]
       },
       {
-          "name": "XTRAIL", 
-          "modeltype": "SUV", 
-          "year": 2023, 
+          "name": "XTRAIL",
+          "modeltype": "SUV",
+          "year": 2023,
           "maker": car_make_instances[0]
       },
       {
@@ -49,7 +49,7 @@ def initiate():
           "year": 2023,
           "maker": car_make_instances[1]
       },
-      { 
+      {
           "name": "E-Class",
           "modeltype": "Sedan",
           "year": 2023,
@@ -74,13 +74,13 @@ def initiate():
           "maker": car_make_instances[2]
       },
       {
-          "name": "Sorrento", 
+          "name": "Sorrento",
           "modeltype": "SUV",
           "year": 2023,
           "maker": car_make_instances[3]
       },
       {
-          "name": "Carnival", 
+          "name": "Carnival",
           "modeltype": "SUV",
           "year": 2023,
           "maker": car_make_instances[3]
@@ -109,13 +109,13 @@ def initiate():
           "year": 2023,
           "maker": car_make_instances[4]
       },
-        # Add more CarModel instances as needed
+    # Add more CarModel instances as needed
     ]
 
     for data in car_model_data:
         CarModel.objects.create(
-            name = data['name'],
-            maker = data['maker'],
-            modeltype = data['modeltype'],
-            year = data['year']
+            name=data['name'],
+            maker=data['maker'],
+            modeltype=data['modeltype'],
+            year=data['year']
         )
