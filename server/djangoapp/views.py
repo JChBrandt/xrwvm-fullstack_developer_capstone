@@ -69,20 +69,20 @@ def registration(request):
         logger.debug("{} is new user".format(username))
 
     # If it is a new user
-    if not username_exist :
+    if not username_exist:
         # Create user in auth_user table
         user = User.objects.create_user(
-            username=username, 
-            first_name=first_name, 
+            username=username,
+            first_name=first_name,
             last_name=last_name,
-            password=password, 
+            password=password,
             email=email
         )
         # Login the user and redirect to list page
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
-    else :
+    else:
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
@@ -94,7 +94,7 @@ def get_dealerships(request, state="All"):
     else:
         endpoint = "/fetchDealers/"+state
     dealerships = get_request(endpoint)
-    return JsonResponse({"status": 200, "dealers" : dealerships})
+    return JsonResponse({"status": 200, "dealers": dealerships})
 
 
 # Create a `get_dealer_reviews` view to render the reviews of a dealer
