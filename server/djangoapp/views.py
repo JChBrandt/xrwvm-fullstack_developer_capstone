@@ -65,6 +65,7 @@ def registration(request):
         User.objects.get(username=username)
         username_exist = True
     except Exception as err:
+        print(f"Unexpected {err=}, {type(err)=}")     
         # If not, simply log this is a new user
         logger.debug("{} is new user".format(username))
 
@@ -87,7 +88,7 @@ def registration(request):
         return JsonResponse(data)
 
 
-# Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
+# Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed  # noqa: E501
 def get_dealerships(request, state="All"):
     if (state == "All"):
         endpoint = "/fetchDealers"
