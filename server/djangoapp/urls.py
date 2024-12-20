@@ -38,6 +38,5 @@ urlpatterns = [
         view=views.add_review,
         name='add_review'
     ),
-    
-    path(route='get_cars', view=views.get_cars, name ='getcars'),
+    path(route='get_cars', view=views.get_cars, name='getcars'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
