@@ -19,7 +19,7 @@ urlpatterns = [
         name='dealer_details'
     ),
     path(
-        route='get_dealers',
+        route='get_dealers/',
         view=views.get_dealerships,
         name='get_dealers'
     ),
